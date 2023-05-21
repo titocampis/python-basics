@@ -334,7 +334,9 @@ print(name)
 print(name.index('a'))
 ```
 
-## 3. Mathematic Operators
+## 3. Operators
+
+### 3.1 Mathematic
 
 ```python
 # Suma Resta ya lo sabes --> Easy
@@ -355,4 +357,295 @@ print(2**2)
 print(2**3)
 print(2**10)
 ```
+
+### 3.2 Logic
+
+* is, ==
+* is not, !=
+* or
+* and
+* in --> si está contenido en tupla, lista, diccionario (clave)...
+
+### 3.3 Concatenated
+
+Solamente admite dos tipos iguales de datos, podemos sumar dos ints o dos strings pero nunca un int y un string
+
+* A + B = AB
+* A * 3 = AAA
+
+Para convertir un string a int --> int(string_x) como veremos en los metodos de conversion
+
+## 4. Metodos por defecto en Python
+
+### 4.1 Metodos de conversion
+Necesarios para convertir un tipo de datos a otro tipo de datos
+
+* convertir a string: str()
+* convertir a int: int()
+* convertir a float: float()
+* convertir a bool: bool()
+* convertir a lista: list()
+
+### 4.2 Interacción con terminal
+
+* print: escribe en la stdout (salida estandar)
+* input: recoge datos de la entrada de teclado
+
+:page_facing_up: **EXAMPLE:**
+
+```python
+print("Hola como estás")
+edad = input('Que edad tienes?')
+print(int(edad)+1)
+```
+
+## 5. Controladores de flujo
+
+Van sin parentesis
+
+* if
+* else
+* elif
+
+:page_facing_up: **EXAMPLE:**
+
+```python
+# Ejemplo de controladores de flujo
+edad = int(input('Que edad tienes?'))
+if edad < 18:
+  print('Lo sentimos mucho, pero al ser menor de edad no podemos mostrarte el contenido')
+elif edad > 65:
+  print('Lo sentimos mucho, eres demasiado mayor para poder ver el contenido')
+else:
+  print('69')
+```
+
+>:mega: **NOTA:**
+>
+>If / else en una linea
+>```python
+>os = 'windows' if platform.system().lower() == 'windows' else 'linux'
+>```
+
+## 6. Loops
+
+### 6.1 For Loop
+
+```python
+# Por elementos en lista / tupla / diccionario
+c = {'nombre':'Claudia', 
+       'DNI' : 43378901,
+       'pesos' : [15,15,16,17,16,18,19]}
+
+## Te pintará las claves
+for elem in c:
+  print(elem)
+
+# Por indices
+lista = [1,3,5,7,9,13,18]
+
+## Te itereará hasta el final de la lista
+for i in range(len(lista)):
+  print(lista[i])
+
+## Te itereará hasta el final de la lista -3 elementos
+for i in range(3,len(lista)-3):
+  print(lista[i])
+
+## Te itereará hasta el final de la lista de 2 en 2 elementos
+for i in range(1,len(lista),2):
+  print(lista[i])
+```
+
+>:mega: **NOTA:**
+>
+>El bucle for puede pararse en cualquier momento con la orden **break**
+
+### 6.2 While Loop
+
+```python
+i = 0
+while True:
+  print("Hola")
+  i+=1
+  if i > 5:
+    break
+```
+
+## 7. Methods (def)
+
+```python
+def saludo(name='', exclamacion=False):
+  if exclamacion:
+    print("Hi broo",name,"!!!")
+  else:
+    print('Hi bro',name)
+
+saludo('Claudia',True)
+saludo('Alex')
+saludo()
+```
+
+>:mega: **NOTA:**
+>
+>```python
+> from typing_extensions import ParamSpecArgs
+> # Para dejar un metodo vacio
+> def saludo_3():
+>  pass
+>```
+
+## 8. Imports
+Para importar metodos de otros modulos en el mismo directorio
+
+```python
+# Modulos publicos
+from time import sleep
+# Modulos locales
+  ## Siendo menu.py el modulo en el mismo directorio
+from menu import method
+```
+
+Los imports se organizan siempre de la siguiente manera
+
+1. Imports de librerias externas en orden alfabetico
+2. Imports de librerias internas en orden alfabetico
+
+## 9. Python Object Oriented
+
+### 9.1 Object Definition
+Python puede usarse para programar orientado a objetos. Los objetos nos ayudan a que el codigo sea mucho más limpio y ordenado, teniendo los atributos / variables ordenadas por clases / obejtos.
+
+**Notas:**
+* Las clases comienzan siempre por mayuscula
+* Las clases heredan de java y utilizan la nomenclatura CamelCase = PrimerasLetrasMayusculas
+* No es tan rígido como java, pueden declararse las clases / subclases en diferentes ficheros, no tiene que haber un fichero por clase
+* Se suelen definir todas las clases / subclases relacionadas con un mismo tema en un mismo fichero
+
+**Important**
+* El self debe irse arrastrando por los metodos que se contengan en la clase
+
+### 9.2 Constructor
+
+```python
+# Definimos la clase Prueba
+class Prueba:
+  # Definimos su constructor
+  def __init__(self, name, timeout = 200):
+    self.name = name
+    self. timeout = timeout
+```
+
+Ejemplo --> Servicio web en directorios
+
+### 9.3 Class Instantiation
+
+```python
+tst = Prueba("Prueba1", 300)
+```
+
+### 9.4 Atributes
+
+Los atributos se definen previamente al constructor
+
+```python
+# Definimos la clase Prueba
+class Prueba:
+
+  # Definimos atributos
+  stop_count = False
+
+  # Definimos su constructor
+  def __init__(self, name, timeout = 200):
+    self.name = name
+    self. timeout = timeout
+```
+
+Pueden ser editados a nivel de instancia, modificando tan solo el contenido del atributo para una instancia en concreto.
+
+```python
+tst = Prueba("Prueba1", 300)
+tst.stop_count = True
+tst.name = "Prueba_Fake"
+```
+
+Pero pueden ser también modificados a nivel de clase, cambiando el valor para todos los objetos de la misma clase.
+
+```python
+tst = Prueba("Prueba1", 300)
+tst_2 = Prueba("Prueba2", 400)
+Prueba.stop_count = True
+```
+
+### 9.5 Methods
+
+To define methods into a class:
+
+```python
+# Definimos la clase Prueba
+class Prueba:
+
+  # Definimos su constructor
+  def __init__(self, ...):
+    pass
+
+  # Defining saluda method
+  def saluda():
+    print("Hello")
+```
+#### 9.5.1 Class Methods
+
+Para definir metodos que puedan usarse a nivel de clase, es decir que puedan llamarse sin instanciarse.
+
+```python
+# Definimos la clase Prueba
+class Prueba:
+
+  # Atribute
+  stop_count = False
+
+  # Definimos su constructor
+  def __init__(self, ...):
+    pass
+
+  # Aquí definimos una nueva función a nivel de clase
+  # Parará todos los timers de todos los objetos de la clase Prueba, porque es Timer.stop_count y no self.stop_count...
+  @classmethod
+  def stopAll(cls):
+    Timer.stop_count_class = True
+```
+
+### 9.6 Inheritance
+```python
+# Definimos una clase PruebaServicio que extiende Prueba (hereda) y utiliza una instancia servicio para funcionar
+class PruebaServicio(Prueba):
+  def __init__(self, name, timeout, servicio, metodo, respuestas):
+    super().__init__(name, timeout)
+    self.servicio = servicio
+    self.metodo = metodo
+    self.respuestas = respuestas
+```
+
+
+## 10. Threads
+
+## 11. Yaml read
+
+## 12. Bash with python
+
+## 13. Examples
+
+## 14. TODO:
+
+[] Pool de hilos
+[] Devolver objetos 
+[] Modificar como se muestra un objeto cuando se convierte a string
+[] Modificar como se muestra un objeto dentro de una tupla, lista o diccionario
+[] TestsCases
+[] Tratado de diccionarios con .keys() o .values() que devuelve listas
+[] Excepciones
+[] Lenguajes de marcado --> YAML, JSON, XML, HTML, CSV, Markdown
+  - De consulta: SQL
+  - De modelado: UML
+[] Lectura de yaml --> Se pueden transformar facilmente a diccionario
 
