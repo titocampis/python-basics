@@ -1,0 +1,13 @@
+servers:
+  - name: Facebook
+    ips:
+      - facebook.es
+  - name: Googlecito
+    ips:
+      - googlecito.es
+  - name: Instagram
+    ips:
+      - instagram.es
+  - name: GitHub
+    ips:
+      - github.com
