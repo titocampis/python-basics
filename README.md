@@ -115,7 +115,7 @@ print('Tercer elemento de la tupla es:', tupla_1[2])
 >```python
 >tupla_1 = (1,2,3,4,5)
 ># Para ver si un elemento se encuentra en una tupla
-print(2 in tupla_1) # --> True
+>print(2 in tupla_1) # --> True
 >```
 
 >:mega: **NOTA:**
