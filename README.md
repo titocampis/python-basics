@@ -19,20 +19,23 @@ Cuando nosotros ejecutamos en nuestro terminal un python3 .... Lo que estamos ha
 1. Download python3:
 
 ```bash
-$ sudo apt update && sudo apt upgrade
-$ sudo sudo apt upgrade python3
+sudo apt update && sudo apt upgrade
+```
+
+```bash
+sudo sudo apt upgrade python3
 ```
 
 2. Install pip
 
 ```bash
-$ sudo apt install python3-pip
+sudo apt install python3-pip
 ```
 
 3. Execute a python module (named xxx.py)
 
 ```bash
-$ python3 xxx.py
+python3 xxx.py
 ```
 
 ### 1.4 Python Comments
