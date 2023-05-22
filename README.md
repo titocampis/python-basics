@@ -637,15 +637,15 @@ class PruebaServicio(Prueba):
 
 ## 14. TODO:
 
-[] Pool de hilos
-[] Devolver objetos 
-[] Modificar como se muestra un objeto cuando se convierte a string
-[] Modificar como se muestra un objeto dentro de una tupla, lista o diccionario
-[] TestsCases
-[] Tratado de diccionarios con .keys() o .values() que devuelve listas
-[] Excepciones
-[] Lenguajes de marcado --> YAML, JSON, XML, HTML, CSV, Markdown
-  - De consulta: SQL
-  - De modelado: UML
-[] Lectura de yaml --> Se pueden transformar facilmente a diccionario
+- [] Pool de hilos
+- [] Devolver objetos 
+- [] Modificar como se muestra un objeto cuando se convierte a string
+- [] Modificar como se muestra un objeto dentro de una tupla, lista o diccionario
+- [] TestsCases
+- [] Tratado de diccionarios con .keys() o .values() que devuelve listas
+- [] Excepciones
+- [] Lenguajes de marcado --> YAML, JSON, XML, HTML, CSV, Markdown
+  - [] De consulta: SQL
+  - [] De modelado: UML
+- [] Lectura de yaml --> Se pueden transformar facilmente a diccionario
 
